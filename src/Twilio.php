@@ -1,4 +1,4 @@
-<?php namespace Parfumix\Laravel5Twilio;
+<?php namespace Laravel5Twilio;
 
 class Twilio {
 

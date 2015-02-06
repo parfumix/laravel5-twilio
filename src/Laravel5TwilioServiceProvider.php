@@ -1,4 +1,4 @@
-<?php namespace Parfumix\Laravel5Twilio;
+<?php namespace Laravel5Twilio;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +18,7 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
+        dd(1);
         /** Publish configuration file . */
         $this->publishes([
             __DIR__.'/../config/connections.php', 'twilio'
@@ -33,7 +34,7 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
      */
     public function register() {
         $this->app['twilio'] = $this->app->share(function($app) {
-            return new Twilio;
+            return new Twilio(1,1, 1);
         });
     }
 
