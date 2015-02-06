@@ -18,7 +18,6 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
      */
     public function boot() {
 
-        dd(1);
         /** Publish configuration file . */
         $this->publishes([
             __DIR__.'/../config/connections.php', 'twilio'
