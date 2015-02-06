@@ -1,0 +1,16 @@
+{
+    "name": "parfumix/laravel5-twilio",
+    "description": "",
+    "authors": [
+        {
+            "name": "Radu",
+            "email": "radu.bordei89@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*",
+        "twilio/sdk":"3.12.*"
+    },
+    "minimum-stability": "stable"
+}
