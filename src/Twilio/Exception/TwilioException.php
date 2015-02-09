@@ -1,4 +1,4 @@
-<?php namespace Twilio;
+<?php namespace Twilio\Exception;
 
 use Exception;
 
