@@ -3,7 +3,7 @@
     "type": "library",
     "description": "An laravel5 twilio component decorator.",
     "keywords": ["laravel5", "twilio"],
-    "homepage": "https://github.com/jeremeamia/super_closure",
+    "homepage": "https://github.com/parfumix/laravel5-twilio",
     "license": "MIT",
     "authors": [
         {
