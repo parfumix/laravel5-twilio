@@ -30,7 +30,7 @@ To add new connections just publish your config file using command and go to you
 php artisan vendor:publish
 ```
 
-
+## Dont't forget to import facades to controllers. ##
 
 Sending a SMS Message
 
@@ -51,8 +51,6 @@ Use Twilio;
 
 Twilio::call('+18085551212', 'http://foo.com/call.xml');
 ```
-
-## Dont't forget to import facades to controllers. ##
 
 ### License
 
