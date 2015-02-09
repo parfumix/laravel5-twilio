@@ -16,11 +16,31 @@ class TwilioManger {
      */
     protected $connections = [];
 
+    /**
+     * @var
+     */
+    protected $current;
+
     public function __construct(array $config) {
         $this->config = $config;
 
         if( $default = $config['default'] )
             self::connect($default);
+    }
+
+    /**
+     * Call direct twilio functions ..
+     *
+     * @param $name
+     * @param array $args
+     * @return mixed
+     * @throws TwilioException
+     */
+    public function __call($name, array $args = []) {
+        if( ! $this->current )
+            throw new TwilioException('You have no active connection');
+
+        return call_user_func_array([$this->connections[$this->current], $name], $args);
     }
 
     /**
@@ -39,6 +59,7 @@ class TwilioManger {
 
         $twilioInstance = new Twilio($params['sid'], $params['token'], $params['from']);
 
+        $this->current = $alias;
         $this->connections[$alias] = $twilioInstance;
 
         return $twilioInstance;
