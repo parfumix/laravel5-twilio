@@ -20,7 +20,7 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
 
         /** Publish configuration file . */
         $this->publishes([
-            __DIR__.'/config/connections.php', 'twilio'
+            __DIR__.'/config/connections.php', config_path('twilio.php')
         ], 'config');
     }
 
