@@ -1,16 +1,27 @@
 {
     "name": "parfumix/laravel5-twilio",
-    "description": "",
+    "type": "library",
+    "description": "An laravel5 twilio component decorator.",
+    "keywords": ["laravel5", "twilio"],
+    "homepage": "https://github.com/jeremeamia/super_closure",
+    "license": "MIT",
     "authors": [
         {
             "name": "Radu",
-            "email": "radu.bordei89@gmail.com"
+            "email": "radu.bordei89@gmail.com",
+            "homepage": "http://github.com/parfumix/",
+            "role": "Developer"
         }
     ],
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "5.0.*",
         "twilio/sdk":"3.12.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Twilio\\": "src/Twilio"
+        }
     },
     "minimum-stability": "dev"
 }
