@@ -23,6 +23,13 @@ Then, add a Facade for more convenient usage. In `app/config/app.php` add the fo
 'Twilio'    => 'Twilio\Facades\Twilio',
 ```
 
+
+To add new connections just publish your config file using command and go to your config folder.
+
+```php
+php artisan vendor:publish
+```
+
 ### License
 
 laravel-twilio is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
