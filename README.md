@@ -39,7 +39,7 @@ Sending a SMS Message
 
 Use Twilio;
 
-Twilio::message('+18085551212', 'Pink Elephants and Happy Rainbows');
+Twilio::message('+18085551212', 'Message text');
 ```
 
 Creating a Call
@@ -48,8 +48,11 @@ Creating a Call
 <?php
 
 Use Twilio;
+
 Twilio::call('+18085551212', 'http://foo.com/call.xml');
 ```
+
+## Dont't forget to import facades to controllers. ##
 
 ### License
 
