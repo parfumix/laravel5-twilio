@@ -9,10 +9,40 @@ class TwilioManger {
      */
     private $config;
 
+    /**
+     * Store connections instances .
+     *
+     * @var array
+     */
+    protected $connections = [];
+
     public function __construct(array $config) {
         $this->config = $config;
+
+        if( $default = $config['default'] )
+            self::connect($default);
     }
 
+    /**
+     * Return an specific connection by alias connection .
+     *
+     * @param $alias
+     * @param array $params
+     * @return \Twilio\Twilio
+     * @throws TwilioException
+     */
+    public function connect($alias, array $params = []) {
+        if( in_array($alias, $this->connections) )
+            return $this->connections[$alias];
+
+        $params = array_merge(self::getConnection($alias), $params);
+
+        $twilioInstance = new Twilio($params['sid'], $params['token'], $params['from']);
+
+        $this->connections[$alias] = $twilioInstance;
+
+        return $twilioInstance;
+    }
 
     /**
      * Check if exists connection by alias ..
@@ -21,7 +51,7 @@ class TwilioManger {
      * @return bool
      */
     public function isConnection($alias) {
-        if( in_array($alias, $this->config['connections']) )
+        if( in_array($alias, array_keys($this->config['connections'])) )
             return true;
 
         return false;
