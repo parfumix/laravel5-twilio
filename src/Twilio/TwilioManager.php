@@ -1,5 +1,7 @@
 <?php namespace Twilio;
 
+use Twilio\Exception\TwilioException;
+
 class TwilioManger {
 
     /**
@@ -10,6 +12,7 @@ class TwilioManger {
     public function __construct(array $config) {
         $this->config = $config;
     }
+
 
     /**
      * Check if exists connection by alias ..
@@ -22,5 +25,19 @@ class TwilioManger {
             return true;
 
         return false;
+    }
+
+    /**
+     * Get connection params by alias ..
+     *
+     * @param $alias
+     * @return mixed
+     * @throws TwilioException
+     */
+    public function getConnection($alias) {
+        if( ! self::isConnection($alias) )
+            throw new TwilioException('invalid connection alias. Please provider another valid one!');
+
+        return $this->config['connections'][$alias];
     }
 }
