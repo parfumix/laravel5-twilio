@@ -39,7 +39,7 @@ Sending a SMS Message
 
 Use Twilio;
 
-Twilio::message('+18085551212', 'Message text');
+Twilio::sms('+18085551212', 'Message text');
 ```
 
 Creating a Call
