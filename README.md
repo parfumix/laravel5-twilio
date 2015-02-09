@@ -1,5 +1,4 @@
-# laravel5-twilio
-laravel5-twilio
+# Laravel5-twilio
 
 ## Installation
 
