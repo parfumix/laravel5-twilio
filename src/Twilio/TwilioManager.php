@@ -59,7 +59,7 @@ class TwilioManger {
 
         $twilioInstance = new Twilio($params['sid'], $params['token'], $params['from']);
 
-        $this->current = $alias;
+        $this->current             = $alias;
         $this->connections[$alias] = $twilioInstance;
 
         return $twilioInstance;
