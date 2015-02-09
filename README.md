@@ -1,6 +1,13 @@
 # laravel5-twilio
 laravel5-twilio
 
+## Installation
+
+Begin by installing this package through Composer. Run this command from the Terminal:
+
+```bash
+    composer require aloha/twilio
+```
 
 ### License
 
