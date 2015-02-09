@@ -32,8 +32,8 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-        $this->app['twilio'] = $this->app->share(function($app) {
-            return new Twilio(1,1, 1);
+        $this->app['twilio'] = $this->app->share(function() {
+            return new TwilioManger(config('twilio'));
         });
     }
 
