@@ -30,6 +30,27 @@ To add new connections just publish your config file using command and go to you
 php artisan vendor:publish
 ```
 
+
+
+Sending a SMS Message
+
+```php
+<?php
+
+Use Twilio;
+
+Twilio::message('+18085551212', 'Pink Elephants and Happy Rainbows');
+```
+
+Creating a Call
+
+```php
+<?php
+
+Use Twilio;
+Twilio::call('+18085551212', 'http://foo.com/call.xml');
+```
+
 ### License
 
 laravel-twilio is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
