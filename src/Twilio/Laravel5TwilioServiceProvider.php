@@ -1,4 +1,4 @@
-<?php namespace Laravel5Twilio;
+<?php namespace Twilio;
 
 use Illuminate\Support\ServiceProvider;
 

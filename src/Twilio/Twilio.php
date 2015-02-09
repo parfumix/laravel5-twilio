@@ -1,4 +1,4 @@
-<?php namespace Laravel5Twilio;
+<?php namespace Twilio;
 
 class Twilio {
 
