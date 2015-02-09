@@ -5,14 +5,9 @@ use Services_Twilio;
 class Twilio {
 
     /**
-     * @var
+     * @var Services_Twilio
      */
-    private $sid;
-
-    /**
-     * @var
-     */
-    private $token;
+    private $client;
 
     /**
      * @var
@@ -25,11 +20,19 @@ class Twilio {
     private $sslVerify;
 
     public function __construct($sid, $token, $from, $sslVerify = true) {
-
-        $this->sid = $sid;
-        $this->token = $token;
         $this->from = $from;
         $this->sslVerify = $sslVerify;
+
+        $this->client = new Services_Twilio($sid, $token);
+    }
+
+    /**
+     * Get Twilio Client ..
+     *
+     * @return Services_Twilio
+     */
+    private function getClient() {
+        return $this->client;
     }
 
     /**
@@ -40,8 +43,17 @@ class Twilio {
      * @return mixed
      */
     public function call($phone, $twiml = '') {
-        $client = new Services_Twilio($this->sid, $this->token);
+        return self::getClient()->account->calls->create($this->from, $phone, $twiml);
+    }
 
-        return $client->account->calls->create($this->from, $phone, $twiml);
+    /**
+     * Send an sms to phone number .
+     *
+     * @param $phone
+     * @param $message
+     * @return mixed
+     */
+    public function sms($phone, $message) {
+        return self::getClient()->account->messages->sendMessage($this->from, $phone, $message);
     }
 }
