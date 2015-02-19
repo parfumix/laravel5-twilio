@@ -2,7 +2,7 @@
 
 use Twilio\Exception\TwilioException;
 
-class TwilioManger {
+class TwilioManager {
 
     /**
      * @var array
