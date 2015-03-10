@@ -33,7 +33,7 @@ class Laravel5TwilioServiceProvider extends ServiceProvider {
      */
     public function register() {
         $this->app->singleton('twilio', function() {
-            return new TwilioManger(config('twilio'));
+            return new TwilioManager(config('twilio'));
         });
     }
 
