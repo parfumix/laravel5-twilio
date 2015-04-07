@@ -51,9 +51,10 @@ class Twilio {
      *
      * @param $phone
      * @param $message
+     * @param $mms
      * @return mixed
      */
-    public function sms($phone, $message) {
-        return self::getClient()->account->messages->sendMessage($this->from, $phone, $message);
+    public function sms($phone, $message, $mms = []) {
+        return self::getClient()->account->messages->sendMessage($this->from, $phone, $message, $mms);
     }
 }
