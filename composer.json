@@ -1,5 +1,5 @@
 {
-    "name": "parfumix/laravel5-twilio",
+    "name": "csmillie/laravel5-twilio",
     "type": "library",
     "description": "An laravel5 twilio component decorator.",
     "keywords": ["laravel5", "twilio"],
