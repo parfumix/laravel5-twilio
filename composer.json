@@ -1,5 +1,5 @@
 {
-    "name": "parfumix/laravel5-twilio",
+    "name": "csmillie/laravel5-twilio",
     "type": "library",
     "description": "An laravel5 twilio component decorator.",
     "keywords": ["laravel5", "twilio"],
@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "5.0.*",
+        "illuminate/support": "5.*",
         "twilio/sdk":"4.*"
     },
     "autoload": {
